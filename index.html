@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopIt!</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="./index.html"
+          ><span style="color: cornflowerblue">Shop</span>It!</a
+        >
+      </div>
+
+      <div class="nav-items">
+        <a href="./index.html">Home</a>
+        <a href="./login/login.html">Login</a>
+        <a href="./signup/signup.html">Signup</a>
+        <a href="./shop/shop.html">Shop</a>
+        <a href="./cart/cart.html">My Cart</a>
+        <a href="./profile/profile.html">Profile</a>
+      </div>
+    </nav>
+
+    <div class="main">
+      <h1 style="font-size: 60px; font-weight: 400" id="output"></h1>
+      <br />
+
+      <p style="color: navy">Quality never goes out of style.</p>
+
+      <p>Modern shipping that is cheap, fast and reliable.</p>
+      <br />
+
+      <div class="button">
+        <button class="btn" onclick="login()">Login</button>
+        <button class="butn" onclick="signup()">Signup</button>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="img.png" />
+    </div>
+
+    <script>
+      var text = "ShopIt !";
+
+      var output = document.getElementById("output");
+
+      function typeText(index) {
+        if (index <= text.length) {
+          output.innerHTML =
+            text.substring(0, index) + '<span class="cursor"></span>';
+          setTimeout(function () {
+            typeText(index + 1);
+          }, 200);
+        } else {
+          setTimeout(function () {
+            output.innerHTML = "";
+            typeText(0);
+          }, 1000); 
+         }
+      }
+
+      typeText(0);
+
+      function login() {
+        window.location.href = "./login/login.html";
+      }
+      function signup() {
+        window.location.href = "./signup/signup.html";
+      }
+    </script>
+  </body>
+</html>
