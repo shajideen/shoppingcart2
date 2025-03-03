@@ -4,6 +4,7 @@ function signup() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("pass").value;
   var confirmpass = document.getElementById("confirm-pass").value;
+  var address = document.getElementById("address").value;
 
   if (password != confirmpass) {
     alert("Password and confirm password are not matched");
@@ -13,7 +14,8 @@ function signup() {
       email == "" ||
       password == "" ||
       confirmpass == "" ||
-      lastname == ""
+      lastname == "" ||
+      address == ""
     ) {
       document.getElementById("error").innerText =
         "Error: All the fields are mandatory";
@@ -40,6 +42,7 @@ function signup() {
         lastName: lastname,
         email: email,
         password: password,
+        address : address,
         myCart: [],
       };
       Users.push(newUserEntered);
